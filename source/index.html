@@ -1,31 +1,148 @@
 <!DOCTYPE html>
 <html lang="ru" data-validate="html">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifetour</title>
-    <link rel="stylesheet" href="sass/style.scss">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lifetour</title>
+  <link rel="stylesheet" href="sass/style.scss">
+</head>
 
-  <body class="page-body">
-    <!-- пример использования спрайта -->
-    <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-    <svg>
-      <use href="/__spritemap#sprite-user"></use>
-    </svg>
-    <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="header">header</div>
-    <div data-test="hero">hero</div>
-    <div data-test="tours">tours</div>
-    <div data-test="training">training</div>
-    <div data-test="about">about</div>
-    <div data-test="reviews">reviews</div>
-    <div data-test="adv">adv</div>
-    <div data-test="gallery">gallery</div>
-    <div data-test="form">form</div>
-    <div data-test="footer">footer</div>
-    <script type="module" src="js/main.js"></script>
-  </body>
+<body class="page-body">
+  <!-- пример использования спрайта -->
+  <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+  <svg>
+    <use href="/__spritemap#sprite-user"></use>
+  </svg>
+  <!-- примеры требуемых атрибутов data-test="*" -->
+  <header class="header" data-test="header">
+    <div class="header__wrapper container">
+      <nav class="header__nav nav-site">
+        <button class="nav-site__burger" type="button">
+          <span></span>
+        </button>
+        <ul class="nav-site__list">
+          <li class="nav-site__item">
+            <a class="nav-site__link" href="#">Туры</a>
+          </li>
+          <li class="nav-site__item">
+            <a class="nav-site__link" href="#">Обучение</a>
+          </li>
+          <li class="nav-site__item">
+            <a class="nav-site__link" href="#">О нас</a>
+          </li>
+          <li class="nav-site__item">
+            <a class="nav-site__link" href="#">Отзывы</a>
+          </li>
+          <li class="nav-site__item">
+            <a class="nav-site__link" href="#">Фотографии</a>
+          </li>
+          <li class="nav-site__item">
+            <a class="nav-site__link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__container">
+        <a href="header__logo logo">
+          <img class="logo__img" src="#" alt="Логотип Lifetour">
+        </a>
+        <a class="header__phone" href="tel:+88000000000">8 800 000-00-00</a>
+      </div>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="hero" data-test="hero">
+      <!-- TODO: Добавить h1 на сайт -->
+      <!-- <h1 class="visually-hidden"></h1> -->
+      <div class="hero__wrapper container">
+        <div class="hero__swiper hero-slider swiper">
+          <ul class="hero-slider__wrapper swiper-wrapper">
+            <li class="hero-slider__slide swiper-slide">
+              <div class="hero-slider__content">
+                <h2 class="hero-slider__title">Захватывающие  вершины Кавказа</h2>
+                <p class="hero-slider__description">
+                  В сопровождении опытных гидов вы пройдёте через потрясающие ландшафты и совершите восход на вершину
+                  горы
+                  Чегет.
+                </p>
+                <a class="hero-slider__link" href="#">Смотреть тур</a>
+              </div>
+              <div class="hero-slider__details">
+                <span class="hero-slider__details-item">6 дней/5 ночей</span>
+                <span class="hero-slider__details-item">Высокая сложность</span>
+              </div>
+            </li>
+          </ul>
+          <ol class="hero-slider__pagination swiper-pagination">
+            <li class="hero-slider__pagination-item">
+              <button class="hero-slider__pagination-btn hero-slider__pagination-btn--current" type="button"></button>
+            </li>
+            <li class="hero-slider__pagination-item">
+              <button class="hero-slider__pagination-btn" type="button"></button>
+            </li>
+            <li class="hero-slider__pagination-item">
+              <button class="hero-slider__pagination-btn" type="button"></button>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="tours" data-test="tours">
+      <div class="tours__wrapper container">
+        <h2 class="tours__title">Ближайшие туры</h2>
+        <span class="tours__title-shadow" aria-hidden="true">Ближайшие туры</span>
+        <div class="tours__swiper tours-slider swiper">
+          <ul class="tours-slider__wrapper swiper-wrapper">
+            <li class="tours-slider__slide tours-slider__slide--elbrus swiper-slide">
+              <!-- TODO: Вставить иконки -->
+              <div class="tours-slider__info">
+                <span class="tours-slider__place">Кавказ</span>
+                <p class="tours-slider__stats tours-slider__stats--days">4 дня</p>
+                <p class="tours-slider__stats tours-slider__stats--nigts">3 ночи</p>
+              </div>
+              <h3 class="tours-slider__name">Путешествие вокруг Эльбруса</h3>
+              <div class="tours-slider__details">
+                <p class="tours-slider__detail">
+                  Сложность:
+                  <span class="visually-hidden">Высокая сложность</span>
+                </p>
+                <p class="tours-slider__detail">
+                  Даты набора:
+                  <span>12.06–19.06</span>
+                </p>
+                <p class="tours-slider__detail">
+                  Группа:
+                  <span>до 15 чел.</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="tours-slider__navigation swiper-navigation">
+            <button class="tours-slider__navigation-btn tours-slider__navigation-btn--prev swiper-navigation-prev"
+              type="button" disabled>
+              <span class="visually-hidden">Переключить слайды назад</span>
+            </button>
+            <button class="tours-slider__navigation-btn tours-slider__navigation-btn--next swiper-navigation-next"
+              type="button">
+              <span class="visually-hidden">Переключить слайды вперёд</span>
+            </button>
+          </div>
+        </div>
+        <a class="tours__link" href="#">Показать все туры</a>
+      </div>
+    </section>
+  </main>
+
+
+  <!--
+  <div data-test="training">training</div>
+  <div data-test="about">about</div>
+  <div data-test="reviews">reviews</div>
+  <div data-test="adv">adv</div>
+  <div data-test="gallery">gallery</div>
+  <div data-test="form">form</div>
+  <div data-test="footer">footer</div> -->
+  <script type="module" src="js/main.js"></script>
+</body>
 
 </html>
